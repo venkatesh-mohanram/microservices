@@ -49,6 +49,8 @@ sub-service - runs in port 9002
 All the above port are the exposed port, the actual port each image listens is port 80.
 
 ## Running the tests
+http://localhost:9000/swagger
+This will show the swagger documentation of the calculator-service
 
 http://localhost:9000/calculator?param1=1&param2=2&operation=add
 ```
@@ -79,7 +81,8 @@ Change the port number you wanted to expose in docker-compose.yml file
 * [Grizzly](https://javaee.github.io/grizzly/) - Grizzly embedded server
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Jersey](https://jersey.github.io/) - Jersey JAX-RS
-* [NodeJS](https://jersey.github.io/) - Jersey JAX-RS
+* [NodeJS](https://nodejs.org/en/) - NodeJs
+* [Swagger](https://swagger.io/) - Swagger documentation
 
 ## Versioning
 
