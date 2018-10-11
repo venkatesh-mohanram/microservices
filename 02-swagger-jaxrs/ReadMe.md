@@ -19,10 +19,35 @@ Maven
 https://maven.apache.org/download.cgi
 ```
 ### Development
-####Create the maven project using the following command
+* Create the maven project using the following command
 ```
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-grizzly2 -DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false -DgroupId=com.microservices.demo -DartifactId=swagger-jersey-service -Dpackage=com.microservices.demo.swagger -DarchetypeVersion=2.17
 ```
-
+* Add the following dependencies in your pom.xml
+```xml
+<dependency>
+    <groupId>org.glassfish.jersey.containers</groupId>
+    <artifactId>jersey-container-grizzly2-servlet</artifactId>
+</dependency>
+<dependency>
+    <groupId>io.swagger</groupId>
+    <artifactId>swagger-jersey2-jaxrs</artifactId>
+    <version>${swagger-jersey2-jaxrs.version}</version>
+</dependency>
+```
+* Annonate your resource class
+```
+@Api(
+   value = "Calculator Resource",
+   description = "Service to evalaute expressions"
+   )
+```
+* Add swagger-ui code into your project
+Download the swagger-ui from below git-hub. Copy the dist folder and paste it into your src/main/resource/swagger-ui directory
+```
+https://github.com/swagger-api/swagger-ui
+* Update the swagger url in the index.html
+```
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
