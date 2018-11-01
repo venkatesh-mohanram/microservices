@@ -56,7 +56,7 @@ Execute the below command to build the docker image and run it
 
 ```
 sudo docker build --tag swagger-jersey-service .
-sudo docker run -p 8080:8080 -v maven-repo:/root/.m2
+sudo docker run -p 8080:8080 -v maven-repo:/root/.m2 -t -i swagger-jersey-service
 ```
 
 Executing via the maven
