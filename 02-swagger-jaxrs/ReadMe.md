@@ -58,7 +58,16 @@ Execute the below command to build the docker image and run it
 sudo docker build --tag swagger-jersey-service .
 sudo docker run -p 8080:8080 -v maven-repo:/root/.m2 -t -i swagger-jersey-service
 ```
+OR
+```
+sudo docker run -d -p 8080:8080 -v maven-repo:/root/.m2 -t -i swagger-jersey-service
+```
 
+The use of -d command will run in a detached mode, meaning it will be running in background and we can use the below command to list the docker processes
+
+```
+sudo docker ps
+```
 Executing via the maven
 
 ```
