@@ -52,6 +52,7 @@ https://github.com/swagger-api/swagger-ui
 
 A step by step series of examples that tell you how to get a development env running
 
+#### Executing via Docker
 Execute the below command to build the docker image and run it
 
 ```
@@ -68,7 +69,7 @@ The use of -d command will run in a detached mode, meaning it will be running in
 ```
 sudo docker ps
 ```
-Executing via the maven
+#### Executing via the maven
 
 ```
 mvn clean install
