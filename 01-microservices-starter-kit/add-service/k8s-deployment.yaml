@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: add-service
-        image: add-service:1
+        image: venkateshm/add-service:1
         ports:
         - containerPort: 80
