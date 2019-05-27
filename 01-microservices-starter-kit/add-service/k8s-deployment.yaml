@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: add-service-deployment
+  labels:
+    app: add-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: add-service
+  template:
+    metadata:
+      labels:
+        app: add-service
+    spec:
+      containers:
+      - name: add-service
+        image: add-service:1
+        ports:
+        - containerPort: 80
