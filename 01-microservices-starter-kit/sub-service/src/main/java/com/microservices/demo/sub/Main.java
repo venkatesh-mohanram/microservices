@@ -35,11 +35,28 @@ public class Main {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        final HttpServer server = startServer();
-        System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
-        System.in.read();
-        server.stop();
+        try {
+        	final HttpServer server = startServer();
+        	
+        	// Add shutdown hook to stop the server
+        	Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+        		
+        		@Override
+        		public void run() {
+        			server.shutdown();
+        			
+        		}
+        		
+        	}));
+        	server.start();        	
+    
+        	System.out.println(String.format("Jersey app started with WADL available at "
+        			+ "%sapplication.wadl\nPress Ctrl + C to stop the server...", BASE_URI));
+			Thread.currentThread().join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
 
