@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: add-service-svc
+  name: addservice
 spec:
   selector:
     app: add-service
